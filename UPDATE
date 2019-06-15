@@ -1,0 +1,6 @@
+如果要pack menu.dbf lu_head.dbf modifier.dbf modlsthd.dbf，请先执行下cd /usr/local/cms_lin/obsolete   ./purge.py 然后再同步
+加入跨账套同步，但前提是每个账套的menu lu_head modifier modlsthd 不能有重复的plu和类id
+跨账套脚本写法 /usr/local/cms_lin/sync.s z01 z02 z03 ,如果z01,z02,z03都要用ipad电子菜单，请去gm_user.s 中改正命令写法
+营业区图片$0010,类别图片@001,项目图片0001项目如果多图片0001_2，三种图片都可加后缀例如@001_西餐零点，以此类推，批量上传cms服务器后执行sync.s同步
+执行setup.s时多一个选项可以选择codepage，支持各种编码，例如繁体中文就是cp950,简体中文是cp936，脚本仅支持cp936和cp950如需要其他codepage，请手动修改datacon.py 里的cp936或cp950
+同步一次最多一分钟，电脑破，数据量大，可能会更长
